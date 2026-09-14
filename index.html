@@ -51,7 +51,7 @@
     <h1>Formulário de Inscrição - Nível Superior (Professor I)</h1>
     
     <div class="aviso">
-      <strong>IMPORTANTE:</strong> O candidato poderá se escrever para apenas um cargo ofertado pela Secretaria Municipal de Educação. Todas as informações prestadas deverão ser comprovadas no momento da convocação, sob pena de desclassificação.
+      <strong>IMPORTANTE:</strong> O candidato poderá se inscrever para apenas um cargo ofertado pela Secretaria Municipal de Educação. Todas as informações prestadas deverão ser comprovadas no momento da convocação, sob pena de desclassificação.
     </div>
 
     <form id="formInscricao">
@@ -156,6 +156,7 @@
       <div class="form-group">
         <label>14. Possui alguma deficiência (PCD) nos termos da Lei nº 13.146/2015? *</label>
         <select id="pcd" onchange="togglePCD()" required>
+          <option value="">Selecione...</option>
           <option value="Não">Não</option>
           <option value="Sim">Sim</option>
         </select>
@@ -182,6 +183,7 @@
         <div class="form-group">
           <label>18. Pós-graduação *</label>
           <select id="pos" required>
+            <option value="">Selecione...</option>
             <option value="0">0 (Não possui)</option>
             <option value="1">1 (Possui)</option>
           </select>
@@ -189,6 +191,7 @@
         <div class="form-group">
           <label>19. Mestrado *</label>
           <select id="mestrado" required>
+            <option value="">Selecione...</option>
             <option value="0">0 (Não possui)</option>
             <option value="1">1 (Possui)</option>
           </select>
@@ -196,6 +199,7 @@
         <div class="form-group">
           <label>20. Doutorado *</label>
           <select id="doutorado" required>
+            <option value="">Selecione...</option>
             <option value="0">0 (Não possui)</option>
             <option value="1">1 (Possui)</option>
           </select>
@@ -251,7 +255,6 @@
 </div>
 
 <script>
-  // URL do Web App do Google Apps Script inserida abaixo:
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw25I7nIbRNYymlLqavkoTCZ2851uTAcPGchBNsd9-gwf3s96nqZB3vZ3-cG01zQ0NwoA/exec';
 
   function togglePCD() {
@@ -308,7 +311,6 @@
     .then(res => res.json())
     .then(response => {
       if(response.result === 'success') {
-        // Preenche o comprovante com os dados enviados
         document.getElementById('comp-protocolo').innerText = response.protocolo;
         document.getElementById('comp-data').innerText = response.dataHora;
         document.getElementById('comp-cargo').innerText = dados.cargo;
@@ -326,7 +328,6 @@
         if(dados.doutorado === "1") titulos.push("Doutorado");
         document.getElementById('comp-titulos').innerText = titulos.length > 0 ? titulos.join(", ") : "Nenhum informado";
 
-        // Esconde o formulário e exibe o comprovante
         document.getElementById('box-formulario').style.display = 'none';
         document.getElementById('comprovante').style.display = 'block';
         window.scrollTo(0, 0);
