@@ -268,6 +268,13 @@
 <script>
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw25I7nIbRNYymlLqavkoTCZ2851uTAcPGchBNsd9-gwf3s96nqZB3vZ3-cG01zQ0NwoA/exec';
 
+  // Desabilita a alteração de valor ao rolar o touchpad/mouse nos campos numéricos
+  document.addEventListener("wheel", function(event) {
+    if (document.activeElement.type === "number") {
+      document.activeElement.blur();
+    }
+  });
+
   function mascaraCPF(input) {
     let value = input.value.replace(/\D/g, "");
     if (value.length > 11) value = value.slice(0, 11);
