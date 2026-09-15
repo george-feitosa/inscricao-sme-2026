@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inscrição Nível Superior SME 002-2026</title>
+  <title>Processo Seletivo Simplificado SME 002/2026 - Formulário de Inscrição - Nível Superior (Professor I)</title>
   <style>
     * { box-sizing: border-box; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
     .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-    h1 { color: #004085; font-size: 24px; border-bottom: 2px solid #004085; padding-bottom: 10px; margin-top: 0; }
+    h1 { color: #004085; font-size: 22px; border-bottom: 2px solid #004085; padding-bottom: 10px; margin-top: 0; line-height: 1.3; }
     .aviso { background-color: #fff3cd; color: #856404; padding: 15px; border-left: 5px solid #ffc107; margin-bottom: 20px; border-radius: 4px; font-size: 14px; }
     .secao-titulo { font-size: 18px; color: #004085; margin-top: 25px; border-left: 4px solid #004085; padding-left: 10px; background: #e9ecef; padding-top: 5px; padding-bottom: 5px; }
     .form-group { margin-bottom: 18px; }
@@ -48,7 +48,7 @@
   
   <!-- FORMULÁRIO -->
   <div id="box-formulario">
-    <h1>Formulário de Inscrição - Nível Superior (Professor I)</h1>
+    <h1>Processo Seletivo Simplificado SME 002/2026 - Formulário de Inscrição - Nível Superior (Professor I)</h1>
     
     <div class="aviso">
       <strong>IMPORTANTE:</strong> O candidato poderá se inscrever para apenas um cargo ofertado pela Secretaria Municipal de Educação. Todas as informações prestadas deverão ser comprovadas no momento da convocação, sob pena de desclassificação.
@@ -257,7 +257,6 @@
 <script>
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw25I7nIbRNYymlLqavkoTCZ2851uTAcPGchBNsd9-gwf3s96nqZB3vZ3-cG01zQ0NwoA/exec';
 
-  // Aplica a máscara visual de CPF enquanto o candidato digita
   function mascaraCPF(input) {
     let value = input.value.replace(/\D/g, "");
     if (value.length > 11) value = value.slice(0, 11);
@@ -290,7 +289,6 @@
     const cpfInput = document.getElementById('cpf').value;
     const cpfApenasNumeros = cpfInput.replace(/\D/g, "");
 
-    // Valida se o CPF possui exatamente 11 dígitos
     if (cpfApenasNumeros.length !== 11) {
       alert("Por favor, digite um CPF válido contendo exatamente 11 dígitos.");
       document.getElementById('cpf').focus();
